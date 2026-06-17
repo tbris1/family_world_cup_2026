@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Draw — World Cup 2026 Sweepstake</title>
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <header class="site">
+    <h1>🌍 The Draw</h1>
+    <div class="sub">Randomly assign all 48 teams to the family</div>
+  </header>
+
+  <nav class="tabs">
+    <a href="index.html">🏆 League Table</a>
+    <a href="draw.html" class="active">🎲 The Draw</a>
+  </nav>
+
+  <main>
+    <div id="lockBanner" class="banner hidden">
+      ✅ The draw has already been completed and locked. Re-running here will
+      <strong>not</strong> change the live table unless you replace
+      <code>data/assignments.json</code>.
+    </div>
+
+    <div class="draw-controls">
+      <button id="drawBtn" class="btn">🎲 Run the Draw</button>
+      <button id="downloadBtn" class="btn secondary" disabled>⬇️ Download assignments.json</button>
+    </div>
+
+    <p id="status" class="note" style="text-align:center"></p>
+
+    <div id="grid" class="members-grid"></div>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
+  <script type="module" src="js/draw.js"></script>
+</body>
+</html>

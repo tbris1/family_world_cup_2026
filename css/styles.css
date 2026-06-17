@@ -1,0 +1,171 @@
+:root {
+  --bg: #0b1020;
+  --panel: #141b32;
+  --panel-2: #1b2342;
+  --ink: #eef2ff;
+  --muted: #97a3c4;
+  --line: #283358;
+  --gold: #ffd24a;
+  --green: #34d399;
+  --accent: #4f7cff;
+  --shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+  --radius: 14px;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  background: radial-gradient(1200px 600px at 50% -10%, #1a2347 0%, var(--bg) 60%);
+  color: var(--ink);
+  min-height: 100vh;
+  line-height: 1.45;
+}
+
+header.site {
+  text-align: center;
+  padding: 32px 16px 8px;
+}
+header.site h1 {
+  margin: 0;
+  font-size: clamp(1.6rem, 4vw, 2.6rem);
+  letter-spacing: 0.5px;
+}
+header.site .sub { color: var(--muted); margin-top: 6px; }
+
+nav.tabs {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  margin: 18px 0 24px;
+  flex-wrap: wrap;
+}
+nav.tabs a {
+  color: var(--ink);
+  text-decoration: none;
+  padding: 8px 16px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: var(--panel);
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+nav.tabs a.active { background: var(--accent); border-color: var(--accent); }
+
+main { max-width: 980px; margin: 0 auto; padding: 0 16px 64px; }
+
+.panel {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 18px;
+}
+
+.note { color: var(--muted); font-size: 0.9rem; }
+.updated { text-align: center; color: var(--muted); font-size: 0.85rem; margin: 12px 0 0; }
+
+.empty {
+  text-align: center;
+  padding: 48px 20px;
+}
+.empty a { color: var(--gold); font-weight: 700; }
+
+/* ---------- League table ---------- */
+table.league {
+  width: 100%;
+  border-collapse: collapse;
+  overflow: hidden;
+  border-radius: var(--radius);
+}
+table.league th, table.league td {
+  padding: 12px 10px;
+  text-align: left;
+  border-bottom: 1px solid var(--line);
+}
+table.league th {
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--muted);
+}
+table.league td.num, table.league th.num { text-align: center; width: 48px; }
+table.league .rank { font-weight: 800; color: var(--muted); }
+table.league tr.top1 .rank { color: var(--gold); }
+table.league .member { font-weight: 700; font-size: 1.05rem; }
+table.league .pts { font-weight: 800; font-size: 1.15rem; color: var(--green); }
+table.league .wdl { color: var(--muted); font-variant-numeric: tabular-nums; }
+
+.teams-cell { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 6px; }
+.team-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: var(--panel-2);
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: 3px 9px 3px 4px;
+  font-size: 0.82rem;
+}
+.team-chip img { width: 18px; height: 18px; object-fit: contain; border-radius: 3px; }
+.team-chip .tp { color: var(--gold); font-weight: 700; }
+
+/* ---------- Draw page ---------- */
+.draw-controls { display: flex; gap: 12px; justify-content: center; align-items: center; flex-wrap: wrap; margin-bottom: 20px; }
+button.btn {
+  background: var(--accent);
+  color: white;
+  border: none;
+  border-radius: 999px;
+  padding: 12px 26px;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: var(--shadow);
+}
+button.btn:disabled { opacity: 0.5; cursor: not-allowed; }
+button.btn.secondary { background: var(--panel-2); border: 1px solid var(--line); }
+
+.members-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+  gap: 12px;
+}
+.member-card {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 12px 14px;
+}
+.member-card h3 { margin: 0 0 8px; font-size: 1.05rem; }
+.member-card .slots { display: flex; flex-direction: column; gap: 6px; min-height: 24px; }
+.slot {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--panel-2);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 5px 9px;
+  font-size: 0.9rem;
+  opacity: 0;
+  transform: translateY(8px) scale(0.96);
+  animation: pop 0.45s ease forwards;
+}
+.slot img { width: 22px; height: 22px; object-fit: contain; }
+@keyframes pop {
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+.banner {
+  text-align: center;
+  background: var(--panel-2);
+  border: 1px solid var(--gold);
+  color: var(--gold);
+  border-radius: var(--radius);
+  padding: 12px;
+  margin-bottom: 18px;
+  font-weight: 600;
+}
+.banner.hidden { display: none; }

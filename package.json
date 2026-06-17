@@ -1,0 +1,12 @@
+{
+  "name": "world-cup-sweepstake",
+  "version": "1.0.0",
+  "description": "Family World Cup 2026 sweepstake: random team draw + live league table.",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "refresh": "node --env-file=config/.env scripts/refresh.mjs",
+    "test:scoring": "node js/scoring.test.mjs",
+    "serve": "npx --yes serve . -l 8000"
+  }
+}
