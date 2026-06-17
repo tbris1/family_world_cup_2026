@@ -1,0 +1,58 @@
+name: Refresh results
+
+# Pulls the latest World Cup data into data/*.json and commits it.
+# GitHub Pages redeploys automatically on the resulting push to main.
+
+on:
+  # Every 2 hours during the tournament. Times are UTC.
+  schedule:
+    - cron: "0 */2 * * *"
+  # Lets you trigger a refresh by hand from the Actions tab.
+  workflow_dispatch:
+
+# Allow the job to push the updated data files back to the repo.
+permissions:
+  contents: write
+
+# If a run is already in progress, let it finish rather than overlapping.
+concurrency:
+  group: refresh
+  cancel-in-progress: false
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Fetch latest results
+        env:
+          API_KEY: ${{ secrets.FOOTBALL_DATA_TOKEN }}
+        run: node scripts/refresh.mjs
+
+      - name: Commit updated data (if changed)
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          # refresh.mjs rewrites the fetchedAt timestamp every run, so data/
+          # always differs. Inspect the diff and ignore changes that are only
+          # to fetchedAt lines — commit only when real match/team data moved.
+          real_changes=$(git diff -- data/ \
+            | grep -E '^[+-]' \
+            | grep -vE '^(\+\+\+|---)' \
+            | grep -v '"fetchedAt"' \
+            || true)
+          if [ -z "$real_changes" ]; then
+            echo "Only the timestamp changed — nothing to commit."
+            git checkout -- data/
+          else
+            git add data/
+            git commit -m "Update World Cup results [skip ci]"
+            git push
+          fi
