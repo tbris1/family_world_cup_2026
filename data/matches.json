@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-06-17T13:42:38.521Z",
+  "fetchedAt": "2026-06-17T18:34:59.761Z",
   "matches": [
     {
       "id": 537327,
@@ -563,7 +563,7 @@
     },
     {
       "id": 537403,
-      "status": "TIMED",
+      "status": "IN_PLAY",
       "stage": "GROUP_STAGE",
       "group": "GROUP_K",
       "utcDate": "2026-06-17T17:00:00Z",
@@ -580,11 +580,11 @@
         "crest": "https://crests.football-data.org/congo_dr.svg"
       },
       "score": {
-        "winner": null,
+        "winner": "DRAW",
         "duration": "REGULAR",
         "fullTime": {
-          "home": null,
-          "away": null
+          "home": 1,
+          "away": 1
         },
         "penalties": null
       }
