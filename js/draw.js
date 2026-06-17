@@ -133,38 +133,100 @@ function fixDuplicates(assignments, order) {
   }
 }
 
-async function runDraw() {
-  drawBtn.disabled = true;
-  downloadBtn.disabled = true;
-  const { assignments, order } = deal();
-  renderEmptyCards(order);
+// Click-driven reveal state. The draw is one team at a time, controlled by the
+// user: every non-favourite team first, then the favourites as a finale. The
+// assignment logic in deal() is untouched — we just choose the reveal order.
+let drawState = "idle"; // idle | drawing-others | drawing-favs | done
+let revealQueue = [];   // [{ team, members: [name, ...] }, ...] non-favs then favs
+let revealIndex = 0;
+let favStartIndex = 0;  // index in revealQueue where favourites begin
+let cardByMember = new Map();
 
-  // Reveal team-by-team for drama: iterate passes so everyone fills evenly.
-  const maxTeams = Math.max(...order.map((m) => assignments[m].length));
-  const cardByMember = new Map([...grid.children].map((c) => [c.dataset.member, c]));
-
-  for (let slot = 0; slot < maxTeams; slot++) {
-    for (const m of order) {
-      const team = assignments[m][slot];
-      if (!team) continue;
-      const slotsEl = cardByMember.get(m).querySelector(".slots");
-      const el = document.createElement("div");
-      el.className = "slot";
-      el.innerHTML = `${team.crest ? `<img src="${team.crest}" alt="" />` : "⚽"} <span>${team.name}</span>`;
-      slotsEl.appendChild(el);
-      await sleep(70);
+// Group the dealt teams into reveal items keyed by team, so a non-favourite
+// shared by two members is drawn once (and lands on both cards together).
+// Non-favourites come first (shuffled), favourites last (shuffled finale).
+function buildRevealQueue(assignments, order) {
+  const byTeam = new Map();
+  for (const m of order) {
+    for (const team of assignments[m]) {
+      if (!byTeam.has(team.id)) byTeam.set(team.id, { team, members: [] });
+      byTeam.get(team.id).members.push(m);
     }
   }
+  const items = [...byTeam.values()];
+  const nonFavs = shuffle(items.filter((it) => !FAVOURITE_TLAS.has(it.team.tla)));
+  const favs = shuffle(items.filter((it) => FAVOURITE_TLAS.has(it.team.tla)));
+  return { queue: [...nonFavs, ...favs], favStartIndex: nonFavs.length };
+}
 
-  // Store keyed by team id (stable) for the committed file.
+function startDraw() {
+  const { assignments, order } = deal();
+  renderEmptyCards(order);
+  cardByMember = new Map([...grid.children].map((c) => [c.dataset.member, c]));
+
+  const built = buildRevealQueue(assignments, order);
+  revealQueue = built.queue;
+  favStartIndex = built.favStartIndex;
+  revealIndex = 0;
+  drawState = "drawing-others";
+
+  // Store keyed by team id (stable) for the committed file. Download stays
+  // disabled until every team has been revealed.
   lastAssignments = {};
   for (const m of order) lastAssignments[m] = assignments[m].map((t) => t.id);
 
+  downloadBtn.disabled = true;
+  drawBtn.textContent = "👇 Draw a team";
+  statusEl.textContent = `The draw begins! Click to reveal each of the ${favStartIndex} underdog teams — favourites come last.`;
+}
+
+function revealItem(item, isFav) {
+  for (const m of item.members) {
+    const card = cardByMember.get(m);
+    if (!card) continue;
+    const slotsEl = card.querySelector(".slots");
+    const el = document.createElement("div");
+    el.className = isFav ? "slot favourite" : "slot";
+    el.innerHTML = `${item.team.crest ? `<img src="${item.team.crest}" alt="" />` : "⚽"} <span>${item.team.name}</span>`;
+    slotsEl.appendChild(el);
+    card.classList.add("just-drawn");
+    setTimeout(() => card.classList.remove("just-drawn"), 700);
+  }
+}
+
+function revealNext() {
+  if (revealIndex >= revealQueue.length) return;
+
+  const isFav = revealIndex >= favStartIndex;
+  revealItem(revealQueue[revealIndex++], isFav);
+
+  if (revealIndex < favStartIndex) {
+    statusEl.textContent = `Drawn ${revealIndex} of ${favStartIndex} underdog teams…`;
+  } else if (revealIndex === favStartIndex) {
+    // Last underdog just landed — set the stage for the favourites finale.
+    drawState = "drawing-favs";
+    drawBtn.textContent = "⭐ Reveal a favourite";
+    statusEl.textContent = "✅ Every underdog is in! Now for the favourites…";
+  } else if (revealIndex < revealQueue.length) {
+    statusEl.textContent = `⭐ Favourite ${revealIndex - favStartIndex} of ${revealQueue.length - favStartIndex} drawn…`;
+  } else {
+    finishDraw();
+  }
+}
+
+function finishDraw() {
+  drawState = "idle"; // allow a fresh re-run from the same button
   statusEl.textContent = "🎉 Draw complete! Download the file and save it as data/assignments.json, then commit it.";
   downloadBtn.disabled = false;
-  drawBtn.disabled = false;
   drawBtn.textContent = "🎲 Re-run the Draw";
   celebrate();
+}
+
+// One button drives everything: start a draw when idle, otherwise reveal the
+// next team. This keeps the timing entirely in the user's hands.
+function onDrawClick() {
+  if (drawState === "idle") startDraw();
+  else revealNext();
 }
 
 function downloadAssignments() {
@@ -192,8 +254,6 @@ function celebrate() {
   })();
 }
 
-const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
-
-drawBtn.addEventListener("click", runDraw);
+drawBtn.addEventListener("click", onDrawClick);
 downloadBtn.addEventListener("click", downloadAssignments);
 loadData();
