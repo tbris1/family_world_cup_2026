@@ -4,6 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>The Draw — World Cup 2026 Sweepstake</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚽</text></svg>" />
   <link rel="stylesheet" href="css/styles.css" />
 </head>
 <body>
@@ -14,18 +15,21 @@
 
   <nav class="tabs">
     <a href="index.html">🏆 League Table</a>
+    <a href="schedule.html">📅 Fixtures</a>
     <a href="draw.html" class="active">🎲 The Draw</a>
   </nav>
 
   <main>
     <div id="lockBanner" class="banner hidden">
-      ✅ The draw has already been completed and locked. Re-running here will
-      <strong>not</strong> change the live table unless you replace
-      <code>data/assignments.json</code>.
+      ✅ The draw has already been completed and locked, so starting a new one is
+      disabled. Hit <strong>Replay the draw</strong> to watch how the teams were
+      assigned. Changing the result would mean replacing
+      <code>data/assignments.json</code> directly.
     </div>
 
     <div class="draw-controls">
       <button id="drawBtn" class="btn">🎲 Start the Draw</button>
+      <button id="replayBtn" class="btn secondary hidden">▶️ Replay the draw</button>
       <button id="downloadBtn" class="btn secondary" disabled>⬇️ Download assignments.json</button>
     </div>
 

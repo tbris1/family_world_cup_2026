@@ -4,13 +4,17 @@
 
 const grid = document.getElementById("grid");
 const drawBtn = document.getElementById("drawBtn");
+const replayBtn = document.getElementById("replayBtn");
 const downloadBtn = document.getElementById("downloadBtn");
 const statusEl = document.getElementById("status");
 const lockBanner = document.getElementById("lockBanner");
 
 let members = [];
 let teams = [];
+let teamsById = new Map();
 let lastAssignments = null;
+let committed = null;   // { member: [teamId, ...] } from a saved draw, or null
+let mode = "draw";      // "draw" (fresh random deal) | "replay" (committed draw)
 
 // The 18 "favourites" (by 3-letter code) from the betting odds. Each member is
 // dealt exactly one of these in round 1 to keep the draw fair. There are
@@ -40,6 +44,7 @@ async function loadData() {
     .map((l) => l.trim())
     .filter(Boolean);
   teams = teamsResp.teams ?? [];
+  teamsById = new Map(teams.map((t) => [t.id, t]));
 
   if (members.length === 0 || teams.length === 0) {
     statusEl.textContent = "⚠️ Could not load members or teams. Run `npm run refresh` first.";
@@ -49,10 +54,21 @@ async function loadData() {
   statusEl.textContent = `${members.length} family members · ${teams.length} teams ready to draw.`;
   renderEmptyCards();
 
-  // If a committed draw already exists, warn that this is a re-draw.
+  // If a committed draw already exists, surface the lock banner and let anyone
+  // replay it — handy for family who couldn't watch the original draw live.
   try {
     const existing = await fetch("data/assignments.json", { cache: "no-store" });
-    if (existing.ok) lockBanner.classList.remove("hidden");
+    if (existing.ok) {
+      const data = await existing.json();
+      committed = data.assignments ?? data;
+      lockBanner.classList.remove("hidden");
+      replayBtn.classList.remove("hidden");
+      // The draw is locked — only replay is allowed, no fresh re-draws.
+      drawBtn.disabled = true;
+      statusEl.textContent =
+        `${members.length} family members · ${teams.length} teams. ` +
+        `A draw is already saved — replay it below to see how it played out.`;
+    }
   } catch { /* no existing assignments — first draw */ }
 }
 
@@ -159,8 +175,11 @@ function buildRevealQueue(assignments, order) {
   return { queue: [...nonFavs, ...favs], favStartIndex: nonFavs.length };
 }
 
-function startDraw() {
-  const { assignments, order } = deal();
+// Drive the click-by-click reveal for either a fresh draw or a replay. Both use
+// the exact same animation; only where the assignments come from differs.
+// `assignments` is keyed member -> [team object, ...], in draw order `order`.
+function beginReveal(assignments, order, replay) {
+  mode = replay ? "replay" : "draw";
   renderEmptyCards(order);
   cardByMember = new Map([...grid.children].map((c) => [c.dataset.member, c]));
 
@@ -171,13 +190,35 @@ function startDraw() {
   drawState = "drawing-others";
 
   // Store keyed by team id (stable) for the committed file. Download stays
-  // disabled until every team has been revealed.
+  // disabled until every team has been revealed (and only for a fresh draw).
   lastAssignments = {};
   for (const m of order) lastAssignments[m] = assignments[m].map((t) => t.id);
 
   downloadBtn.disabled = true;
-  drawBtn.textContent = "👇 Draw a team";
-  statusEl.textContent = `The draw begins! Click to reveal each of the ${favStartIndex} underdog teams — favourites come last.`;
+  replayBtn.disabled = true; // no switching modes mid-reveal
+  drawBtn.disabled = false;  // the main button drives the reveal during either mode
+  drawBtn.textContent = replay ? "👇 Reveal a team" : "👇 Draw a team";
+  statusEl.textContent = replay
+    ? `Replaying the saved draw — click to reveal each of the ${favStartIndex} underdog teams; favourites come last.`
+    : `The draw begins! Click to reveal each of the ${favStartIndex} underdog teams — favourites come last.`;
+}
+
+function startDraw() {
+  const { assignments, order } = deal();
+  beginReveal(assignments, order, false);
+}
+
+// Replay the committed draw: the saved file keeps members in their original draw
+// order, so we rebuild the same per-member team lists (as team objects) and run
+// the identical reveal animation.
+function startReplay() {
+  if (!committed) return;
+  const order = Object.keys(committed);
+  const assignments = {};
+  for (const m of order) {
+    assignments[m] = (committed[m] ?? []).map((id) => teamsById.get(id)).filter(Boolean);
+  }
+  beginReveal(assignments, order, true);
 }
 
 function revealItem(item, isFav) {
@@ -216,9 +257,18 @@ function revealNext() {
 
 function finishDraw() {
   drawState = "idle"; // allow a fresh re-run from the same button
-  statusEl.textContent = "🎉 Draw complete! Download the file and save it as data/assignments.json, then commit it.";
-  downloadBtn.disabled = false;
-  drawBtn.textContent = "🎲 Re-run the Draw";
+  if (committed) replayBtn.disabled = false;
+  if (mode === "replay") {
+    // Nothing new to save — this is the already-committed draw, replayed. The
+    // draw stays locked, so the main button goes back to disabled.
+    statusEl.textContent = "🎉 Replay complete! This is the draw exactly as it was saved.";
+    drawBtn.textContent = "🎲 Start the Draw";
+    drawBtn.disabled = true;
+  } else {
+    statusEl.textContent = "🎉 Draw complete! Download the file and save it as data/assignments.json, then commit it.";
+    downloadBtn.disabled = false;
+    drawBtn.textContent = "🎲 Re-run the Draw";
+  }
   celebrate();
 }
 
@@ -227,6 +277,12 @@ function finishDraw() {
 function onDrawClick() {
   if (drawState === "idle") startDraw();
   else revealNext();
+}
+
+// Replay only kicks off when nothing else is mid-reveal; once running, the main
+// button advances the reveal just like a fresh draw.
+function onReplayClick() {
+  if (drawState === "idle") startReplay();
 }
 
 function downloadAssignments() {
@@ -255,5 +311,6 @@ function celebrate() {
 }
 
 drawBtn.addEventListener("click", onDrawClick);
+replayBtn.addEventListener("click", onReplayClick);
 downloadBtn.addEventListener("click", downloadAssignments);
 loadData();

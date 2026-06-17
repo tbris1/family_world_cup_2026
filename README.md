@@ -15,6 +15,10 @@ tournament.
   `assignments.json`.
 - **`index.html`** — the live league table, computed in the browser from the
   data files by the pure scoring module `js/scoring.js`.
+- **`schedule.html`** — the fixtures, grouped day by day, with the family member
+  who owns each team shown beneath the match (e.g. "Mexico v South Africa" →
+  "Gus v Lou"). Works before the draw too; it just omits the names until
+  `data/assignments.json` exists.
 
 ## Setup
 
@@ -42,6 +46,12 @@ tournament.
 2. Click **Download assignments.json**.
 3. Move the downloaded file to `data/assignments.json` and commit it. This locks
    the result so it's the same for everyone.
+
+Once `data/assignments.json` is committed, anyone opening **The Draw** page gets a
+**▶️ Replay the draw** button. It plays back the saved draw with the same
+click-by-click animation (underdogs first, favourites as the finale) so family
+who missed the live draw can watch exactly how their teams were assigned. Replay
+never changes the committed result.
 
 Every member gets **3 teams** for fairness:
 
