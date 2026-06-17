@@ -54,5 +54,15 @@ jobs:
           else
             git add data/
             git commit -m "Update World Cup results [skip ci]"
-            git push
+            # main may have moved since checkout (a concurrent run or a manual
+            # push). Rebase our single data commit onto the latest remote and
+            # retry a few times before giving up.
+            for attempt in 1 2 3; do
+              if git push; then
+                echo "Pushed on attempt $attempt."
+                break
+              fi
+              echo "Push rejected (attempt $attempt) — rebasing onto latest main…"
+              git pull --rebase origin main
+            done
           fi
