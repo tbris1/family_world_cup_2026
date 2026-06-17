@@ -24,6 +24,26 @@ function fmtDate(iso) {
   }
 }
 
+// "just now", "2 hours ago", "3 days ago" — a friendly sense of freshness.
+function relTime(iso) {
+  if (!iso) return "";
+  const then = new Date(iso).getTime();
+  if (Number.isNaN(then)) return "";
+  const secs = Math.round((Date.now() - then) / 1000);
+  const rtf = new Intl.RelativeTimeFormat(undefined, { numeric: "auto" });
+  const units = [
+    ["day", 86400],
+    ["hour", 3600],
+    ["minute", 60],
+  ];
+  for (const [unit, secsPer] of units) {
+    if (Math.abs(secs) >= secsPer) {
+      return rtf.format(-Math.round(secs / secsPer), unit);
+    }
+  }
+  return "just now";
+}
+
 function teamChip(t) {
   const crest = t.crest ? `<img src="${t.crest}" alt="" />` : "";
   return `<span class="team-chip" title="${t.name}: ${t.points} pts (${t.wins}W ${t.draws}D ${t.losses}L)">
@@ -101,7 +121,9 @@ async function main() {
   renderTable(rows);
 
   const played = (matchesData.matches ?? []).filter((m) => m.status === "FINISHED" || m.status === "AWARDED").length;
-  updatedEl.textContent = `${played} matches played · data refreshed ${fmtDate(matchesData.fetchedAt)}`;
+  const when = matchesData.fetchedAt;
+  const rel = relTime(when);
+  updatedEl.textContent = `${played} matches played · last updated ${rel}${rel ? " (" : ""}${fmtDate(when)}${rel ? ")" : ""}`;
 }
 
 main();
