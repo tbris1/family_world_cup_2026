@@ -26,9 +26,28 @@ if (!TOKEN) {
   process.exit(1);
 }
 
+// Wraps fetch with retry-on-network-failure. football-data.org occasionally
+// drops the TLS connection mid-handshake from CI runners (UND_ERR_SOCKET /
+// "other side closed"), which is transient — a short backoff and retry clears
+// it. Throws only after all attempts fail.
+async function fetchWithRetry(url, options, attempts = 4) {
+  let lastErr;
+  for (let i = 0; i < attempts; i++) {
+    try {
+      return await fetch(url, options);
+    } catch (err) {
+      lastErr = err;
+      const wait = 2000 * (i + 1); // 2s, 4s, 6s…
+      console.error(`  ⚠ Network error (attempt ${i + 1}/${attempts}): ${err.cause?.code ?? err.message}. Retrying in ${wait / 1000}s…`);
+      await new Promise((r) => setTimeout(r, wait));
+    }
+  }
+  throw lastErr;
+}
+
 async function api(path) {
   const url = `${BASE}${path}`;
-  const res = await fetch(url, { headers: { "X-Auth-Token": TOKEN } });
+  const res = await fetchWithRetry(url, { headers: { "X-Auth-Token": TOKEN } });
   if (res.status === 429) {
     console.error("❌ Rate limited (429). Free tier allows ~10 req/min — wait a minute and retry.");
     process.exit(1);
