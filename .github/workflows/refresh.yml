@@ -55,14 +55,26 @@ jobs:
             git add data/
             git commit -m "Update World Cup results [skip ci]"
             # main may have moved since checkout (a concurrent run or a manual
-            # push). Rebase our single data commit onto the latest remote and
-            # retry a few times before giving up.
-            for attempt in 1 2 3; do
+            # push). The data/*.json files are regenerated wholesale every run,
+            # so the freshly fetched copy is authoritative — a 3-way merge of
+            # them is meaningless and conflicts every time. Instead of rebasing,
+            # re-point our single commit onto the latest origin/main and re-add
+            # our generated data on top. This can never conflict.
+            for attempt in 1 2 3 4 5; do
               if git push; then
                 echo "Pushed on attempt $attempt."
                 break
               fi
-              echo "Push rejected (attempt $attempt) — rebasing onto latest main…"
-              git pull --rebase origin main
+              echo "Push rejected (attempt $attempt) — re-applying onto latest main…"
+              git fetch origin main
+              # Move HEAD to the latest remote tip but keep our generated data
+              # in the working tree, then re-stage and re-commit it.
+              git reset --soft origin/main
+              git add data/
+              if git diff --cached --quiet; then
+                echo "Remote already matches our data — nothing to push."
+                break
+              fi
+              git commit -m "Update World Cup results [skip ci]"
             done
           fi
