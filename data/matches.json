@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-06-19T21:00:33.269Z",
+  "fetchedAt": "2026-06-19T22:42:54.616Z",
   "matches": [
     {
       "id": 537327,
@@ -787,7 +787,7 @@
     },
     {
       "id": 537348,
-      "status": "IN_PLAY",
+      "status": "FINISHED",
       "stage": "GROUP_STAGE",
       "group": "GROUP_D",
       "utcDate": "2026-06-19T19:00:00Z",
@@ -815,7 +815,7 @@
     },
     {
       "id": 537342,
-      "status": "TIMED",
+      "status": "IN_PLAY",
       "stage": "GROUP_STAGE",
       "group": "GROUP_C",
       "utcDate": "2026-06-19T22:00:00Z",
@@ -832,11 +832,11 @@
         "crest": "https://crests.football-data.org/morocco.svg"
       },
       "score": {
-        "winner": null,
+        "winner": "AWAY_TEAM",
         "duration": "REGULAR",
         "fullTime": {
-          "home": null,
-          "away": null
+          "home": 0,
+          "away": 1
         },
         "penalties": null
       }
