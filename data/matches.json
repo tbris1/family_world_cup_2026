@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-06-19T19:24:45.104Z",
+  "fetchedAt": "2026-06-19T21:00:33.269Z",
   "matches": [
     {
       "id": 537327,
@@ -807,7 +807,7 @@
         "winner": "HOME_TEAM",
         "duration": "REGULAR",
         "fullTime": {
-          "home": 1,
+          "home": 2,
           "away": 0
         },
         "penalties": null
