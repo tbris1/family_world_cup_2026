@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-06-19T02:54:03.947Z",
+  "fetchedAt": "2026-06-19T08:58:17.082Z",
   "matches": [
     {
       "id": 537327,
@@ -408,7 +408,7 @@
       "awayTeam": {
         "id": 758,
         "name": "Uruguay",
-        "tla": "URY",
+        "tla": "URU",
         "crest": "https://crests.football-data.org/758.svg"
       },
       "score": {
@@ -759,7 +759,7 @@
     },
     {
       "id": 537330,
-      "status": "IN_PLAY",
+      "status": "FINISHED",
       "stage": "GROUP_STAGE",
       "group": "GROUP_A",
       "utcDate": "2026-06-19T01:00:00Z",
@@ -1074,7 +1074,7 @@
       "homeTeam": {
         "id": 758,
         "name": "Uruguay",
-        "tla": "URY",
+        "tla": "URU",
         "crest": "https://crests.football-data.org/758.svg"
       },
       "awayTeam": {
@@ -1746,7 +1746,7 @@
       "homeTeam": {
         "id": 758,
         "name": "Uruguay",
-        "tla": "URY",
+        "tla": "URU",
         "crest": "https://crests.football-data.org/758.svg"
       },
       "awayTeam": {
