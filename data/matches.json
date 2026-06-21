@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-06-21T19:14:00.729Z",
+  "fetchedAt": "2026-06-21T21:03:54.075Z",
   "matches": [
     {
       "id": 537327,
@@ -408,7 +408,7 @@
       "awayTeam": {
         "id": 758,
         "name": "Uruguay",
-        "tla": "URU",
+        "tla": "URY",
         "crest": "https://crests.football-data.org/758.svg"
       },
       "score": {
@@ -1031,7 +1031,7 @@
         "winner": "HOME_TEAM",
         "duration": "REGULAR",
         "fullTime": {
-          "home": 5,
+          "home": 4,
           "away": 0
         },
         "penalties": null
@@ -1074,7 +1074,7 @@
       "homeTeam": {
         "id": 758,
         "name": "Uruguay",
-        "tla": "URU",
+        "tla": "URY",
         "crest": "https://crests.football-data.org/758.svg"
       },
       "awayTeam": {
@@ -1746,7 +1746,7 @@
       "homeTeam": {
         "id": 758,
         "name": "Uruguay",
-        "tla": "URU",
+        "tla": "URY",
         "crest": "https://crests.football-data.org/758.svg"
       },
       "awayTeam": {
