@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-06-21T17:18:11.159Z",
+  "fetchedAt": "2026-06-21T19:14:00.729Z",
   "matches": [
     {
       "id": 537327,
@@ -1011,7 +1011,7 @@
     },
     {
       "id": 537371,
-      "status": "IN_PLAY",
+      "status": "FINISHED",
       "stage": "GROUP_STAGE",
       "group": "GROUP_H",
       "utcDate": "2026-06-21T16:00:00Z",
@@ -1031,7 +1031,7 @@
         "winner": "HOME_TEAM",
         "duration": "REGULAR",
         "fullTime": {
-          "home": 3,
+          "home": 5,
           "away": 0
         },
         "penalties": null
@@ -1039,7 +1039,7 @@
     },
     {
       "id": 537365,
-      "status": "TIMED",
+      "status": "IN_PLAY",
       "stage": "GROUP_STAGE",
       "group": "GROUP_G",
       "utcDate": "2026-06-21T19:00:00Z",
@@ -1056,11 +1056,11 @@
         "crest": "https://crests.football-data.org/iran.svg"
       },
       "score": {
-        "winner": null,
+        "winner": "DRAW",
         "duration": "REGULAR",
         "fullTime": {
-          "home": null,
-          "away": null
+          "home": 0,
+          "away": 0
         },
         "penalties": null
       }
