@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-06-21T08:20:33.512Z",
+  "fetchedAt": "2026-06-21T17:18:11.159Z",
   "matches": [
     {
       "id": 537327,
@@ -1011,7 +1011,7 @@
     },
     {
       "id": 537371,
-      "status": "TIMED",
+      "status": "IN_PLAY",
       "stage": "GROUP_STAGE",
       "group": "GROUP_H",
       "utcDate": "2026-06-21T16:00:00Z",
@@ -1028,11 +1028,11 @@
         "crest": "https://crests.football-data.org/saudi_arabia.svg"
       },
       "score": {
-        "winner": null,
+        "winner": "HOME_TEAM",
         "duration": "REGULAR",
         "fullTime": {
-          "home": null,
-          "away": null
+          "home": 3,
+          "away": 0
         },
         "penalties": null
       }
