@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-06-23T17:44:37.631Z",
+  "fetchedAt": "2026-06-23T19:48:57.835Z",
   "matches": [
     {
       "id": 537327,
@@ -240,7 +240,7 @@
       "awayTeam": {
         "id": 9460,
         "name": "Curaçao",
-        "tla": "CUW",
+        "tla": "CUR",
         "crest": "https://crests.football-data.org/curacao.svg"
       },
       "score": {
@@ -408,7 +408,7 @@
       "awayTeam": {
         "id": 758,
         "name": "Uruguay",
-        "tla": "URU",
+        "tla": "URY",
         "crest": "https://crests.football-data.org/758.svg"
       },
       "score": {
@@ -968,7 +968,7 @@
       "awayTeam": {
         "id": 9460,
         "name": "Curaçao",
-        "tla": "CUW",
+        "tla": "CUR",
         "crest": "https://crests.football-data.org/curacao.svg"
       },
       "score": {
@@ -1074,7 +1074,7 @@
       "homeTeam": {
         "id": 758,
         "name": "Uruguay",
-        "tla": "URU",
+        "tla": "URY",
         "crest": "https://crests.football-data.org/758.svg"
       },
       "awayTeam": {
@@ -1235,7 +1235,7 @@
     },
     {
       "id": 537405,
-      "status": "IN_PLAY",
+      "status": "FINISHED",
       "stage": "GROUP_STAGE",
       "group": "GROUP_K",
       "utcDate": "2026-06-23T17:00:00Z",
@@ -1255,7 +1255,7 @@
         "winner": "HOME_TEAM",
         "duration": "REGULAR",
         "fullTime": {
-          "home": 3,
+          "home": 5,
           "away": 0
         },
         "penalties": null
@@ -1550,7 +1550,7 @@
       "homeTeam": {
         "id": 9460,
         "name": "Curaçao",
-        "tla": "CUW",
+        "tla": "CUR",
         "crest": "https://crests.football-data.org/curacao.svg"
       },
       "awayTeam": {
@@ -1746,7 +1746,7 @@
       "homeTeam": {
         "id": 758,
         "name": "Uruguay",
-        "tla": "URU",
+        "tla": "URY",
         "crest": "https://crests.football-data.org/758.svg"
       },
       "awayTeam": {
@@ -2080,10 +2080,10 @@
       "group": null,
       "utcDate": "2026-06-29T20:30:00Z",
       "homeTeam": {
-        "id": 759,
-        "name": "Germany",
-        "tla": "GER",
-        "crest": "https://crests.football-data.org/759.svg"
+        "id": null,
+        "name": null,
+        "tla": null,
+        "crest": null
       },
       "awayTeam": {
         "id": null,
@@ -2192,10 +2192,10 @@
       "group": null,
       "utcDate": "2026-07-01T01:00:00Z",
       "homeTeam": {
-        "id": 769,
-        "name": "Mexico",
-        "tla": "MEX",
-        "crest": "https://crests.football-data.org/769.svg"
+        "id": null,
+        "name": null,
+        "tla": null,
+        "crest": null
       },
       "awayTeam": {
         "id": null,
@@ -2276,10 +2276,10 @@
       "group": null,
       "utcDate": "2026-07-02T00:00:00Z",
       "homeTeam": {
-        "id": 771,
-        "name": "United States",
-        "tla": "USA",
-        "crest": "https://crests.football-data.org/usa.svg"
+        "id": null,
+        "name": null,
+        "tla": null,
+        "crest": null
       },
       "awayTeam": {
         "id": null,
