@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-06-23T19:48:57.835Z",
+  "fetchedAt": "2026-06-23T21:23:08.940Z",
   "matches": [
     {
       "id": 537327,
@@ -240,7 +240,7 @@
       "awayTeam": {
         "id": 9460,
         "name": "Curaçao",
-        "tla": "CUR",
+        "tla": "CUW",
         "crest": "https://crests.football-data.org/curacao.svg"
       },
       "score": {
@@ -968,7 +968,7 @@
       "awayTeam": {
         "id": 9460,
         "name": "Curaçao",
-        "tla": "CUR",
+        "tla": "CUW",
         "crest": "https://crests.football-data.org/curacao.svg"
       },
       "score": {
@@ -1263,7 +1263,7 @@
     },
     {
       "id": 537411,
-      "status": "TIMED",
+      "status": "LIVE",
       "stage": "GROUP_STAGE",
       "group": "GROUP_L",
       "utcDate": "2026-06-23T20:00:00Z",
@@ -1280,11 +1280,11 @@
         "crest": "https://crests.football-data.org/ghana.svg"
       },
       "score": {
-        "winner": null,
+        "winner": "DRAW",
         "duration": "REGULAR",
         "fullTime": {
-          "home": null,
-          "away": null
+          "home": 0,
+          "away": 0
         },
         "penalties": null
       }
@@ -1550,7 +1550,7 @@
       "homeTeam": {
         "id": 9460,
         "name": "Curaçao",
-        "tla": "CUR",
+        "tla": "CUW",
         "crest": "https://crests.football-data.org/curacao.svg"
       },
       "awayTeam": {
