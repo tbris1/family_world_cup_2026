@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-06-23T07:38:59.000Z",
+  "fetchedAt": "2026-06-23T10:54:03.975Z",
   "matches": [
     {
       "id": 537327,
@@ -240,7 +240,7 @@
       "awayTeam": {
         "id": 9460,
         "name": "Curaçao",
-        "tla": "CUR",
+        "tla": "CUW",
         "crest": "https://crests.football-data.org/curacao.svg"
       },
       "score": {
@@ -408,7 +408,7 @@
       "awayTeam": {
         "id": 758,
         "name": "Uruguay",
-        "tla": "URY",
+        "tla": "URU",
         "crest": "https://crests.football-data.org/758.svg"
       },
       "score": {
@@ -968,7 +968,7 @@
       "awayTeam": {
         "id": 9460,
         "name": "Curaçao",
-        "tla": "CUR",
+        "tla": "CUW",
         "crest": "https://crests.football-data.org/curacao.svg"
       },
       "score": {
@@ -1074,7 +1074,7 @@
       "homeTeam": {
         "id": 758,
         "name": "Uruguay",
-        "tla": "URY",
+        "tla": "URU",
         "crest": "https://crests.football-data.org/758.svg"
       },
       "awayTeam": {
@@ -1550,7 +1550,7 @@
       "homeTeam": {
         "id": 9460,
         "name": "Curaçao",
-        "tla": "CUR",
+        "tla": "CUW",
         "crest": "https://crests.football-data.org/curacao.svg"
       },
       "awayTeam": {
@@ -1746,7 +1746,7 @@
       "homeTeam": {
         "id": 758,
         "name": "Uruguay",
-        "tla": "URY",
+        "tla": "URU",
         "crest": "https://crests.football-data.org/758.svg"
       },
       "awayTeam": {
