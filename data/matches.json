@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-06-23T02:09:51.739Z",
+  "fetchedAt": "2026-06-23T07:38:59.000Z",
   "matches": [
     {
       "id": 537327,
@@ -240,7 +240,7 @@
       "awayTeam": {
         "id": 9460,
         "name": "Curaçao",
-        "tla": "CUW",
+        "tla": "CUR",
         "crest": "https://crests.football-data.org/curacao.svg"
       },
       "score": {
@@ -968,7 +968,7 @@
       "awayTeam": {
         "id": 9460,
         "name": "Curaçao",
-        "tla": "CUW",
+        "tla": "CUR",
         "crest": "https://crests.football-data.org/curacao.svg"
       },
       "score": {
@@ -1207,7 +1207,7 @@
     },
     {
       "id": 537400,
-      "status": "TIMED",
+      "status": "FINISHED",
       "stage": "GROUP_STAGE",
       "group": "GROUP_J",
       "utcDate": "2026-06-23T03:00:00Z",
@@ -1224,11 +1224,11 @@
         "crest": "https://crests.football-data.org/algeria.svg"
       },
       "score": {
-        "winner": null,
+        "winner": "AWAY_TEAM",
         "duration": "REGULAR",
         "fullTime": {
-          "home": null,
-          "away": null
+          "home": 1,
+          "away": 2
         },
         "penalties": null
       }
@@ -1550,7 +1550,7 @@
       "homeTeam": {
         "id": 9460,
         "name": "Curaçao",
-        "tla": "CUW",
+        "tla": "CUR",
         "crest": "https://crests.football-data.org/curacao.svg"
       },
       "awayTeam": {
