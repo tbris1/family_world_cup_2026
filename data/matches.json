@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-06-24T19:25:36.760Z",
+  "fetchedAt": "2026-06-24T21:16:22.105Z",
   "matches": [
     {
       "id": 537327,
@@ -1347,7 +1347,7 @@
     },
     {
       "id": 537337,
-      "status": "IN_PLAY",
+      "status": "FINISHED",
       "stage": "GROUP_STAGE",
       "group": "GROUP_B",
       "utcDate": "2026-06-24T19:00:00Z",
@@ -1364,18 +1364,18 @@
         "crest": "https://crests.football-data.org/canada.svg"
       },
       "score": {
-        "winner": "DRAW",
+        "winner": "HOME_TEAM",
         "duration": "REGULAR",
         "fullTime": {
-          "home": 0,
-          "away": 0
+          "home": 2,
+          "away": 1
         },
         "penalties": null
       }
     },
     {
       "id": 537338,
-      "status": "IN_PLAY",
+      "status": "FINISHED",
       "stage": "GROUP_STAGE",
       "group": "GROUP_B",
       "utcDate": "2026-06-24T19:00:00Z",
@@ -1392,11 +1392,11 @@
         "crest": "https://crests.football-data.org/8030.svg"
       },
       "score": {
-        "winner": "DRAW",
+        "winner": "HOME_TEAM",
         "duration": "REGULAR",
         "fullTime": {
-          "home": 0,
-          "away": 0
+          "home": 3,
+          "away": 1
         },
         "penalties": null
       }
