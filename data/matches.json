@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-06-25T07:32:58.902Z",
+  "fetchedAt": "2026-06-25T18:02:06.215Z",
   "matches": [
     {
       "id": 537327,
@@ -2080,10 +2080,10 @@
       "group": null,
       "utcDate": "2026-06-29T20:30:00Z",
       "homeTeam": {
-        "id": null,
-        "name": null,
-        "tla": null,
-        "crest": null
+        "id": 759,
+        "name": "Germany",
+        "tla": "GER",
+        "crest": "https://crests.football-data.org/759.svg"
       },
       "awayTeam": {
         "id": null,
@@ -2192,10 +2192,10 @@
       "group": null,
       "utcDate": "2026-07-01T01:00:00Z",
       "homeTeam": {
-        "id": null,
-        "name": null,
-        "tla": null,
-        "crest": null
+        "id": 769,
+        "name": "Mexico",
+        "tla": "MEX",
+        "crest": "https://crests.football-data.org/769.svg"
       },
       "awayTeam": {
         "id": null,
@@ -2276,10 +2276,10 @@
       "group": null,
       "utcDate": "2026-07-02T00:00:00Z",
       "homeTeam": {
-        "id": null,
-        "name": null,
-        "tla": null,
-        "crest": null
+        "id": 771,
+        "name": "United States",
+        "tla": "USA",
+        "crest": "https://crests.football-data.org/usa.svg"
       },
       "awayTeam": {
         "id": null,
@@ -2416,10 +2416,10 @@
       "group": null,
       "utcDate": "2026-07-03T22:00:00Z",
       "homeTeam": {
-        "id": null,
-        "name": null,
-        "tla": null,
-        "crest": null
+        "id": 762,
+        "name": "Argentina",
+        "tla": "ARG",
+        "crest": "https://crests.football-data.org/762.png"
       },
       "awayTeam": {
         "id": null,
