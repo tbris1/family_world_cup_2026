@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-06-26T19:27:36.721Z",
+  "fetchedAt": "2026-06-26T21:12:01.723Z",
   "matches": [
     {
       "id": 537327,
@@ -1683,7 +1683,7 @@
     },
     {
       "id": 537395,
-      "status": "LIVE",
+      "status": "FINISHED",
       "stage": "GROUP_STAGE",
       "group": "GROUP_I",
       "utcDate": "2026-06-26T19:00:00Z",
@@ -1704,14 +1704,14 @@
         "duration": "REGULAR",
         "fullTime": {
           "home": 1,
-          "away": 2
+          "away": 4
         },
         "penalties": null
       }
     },
     {
       "id": 537396,
-      "status": "LIVE",
+      "status": "FINISHED",
       "stage": "GROUP_STAGE",
       "group": "GROUP_I",
       "utcDate": "2026-06-26T19:00:00Z",
@@ -1731,7 +1731,7 @@
         "winner": "HOME_TEAM",
         "duration": "REGULAR",
         "fullTime": {
-          "home": 1,
+          "home": 5,
           "away": 0
         },
         "penalties": null
