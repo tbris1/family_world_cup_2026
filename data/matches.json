@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-06-27T02:08:17.949Z",
+  "fetchedAt": "2026-06-27T06:46:02.759Z",
   "matches": [
     {
       "id": 537327,
@@ -1795,7 +1795,7 @@
     },
     {
       "id": 537367,
-      "status": "TIMED",
+      "status": "FINISHED",
       "stage": "GROUP_STAGE",
       "group": "GROUP_G",
       "utcDate": "2026-06-27T03:00:00Z",
@@ -1812,18 +1812,18 @@
         "crest": "https://crests.football-data.org/805.svg"
       },
       "score": {
-        "winner": null,
+        "winner": "AWAY_TEAM",
         "duration": "REGULAR",
         "fullTime": {
-          "home": null,
-          "away": null
+          "home": 1,
+          "away": 5
         },
         "penalties": null
       }
     },
     {
       "id": 537368,
-      "status": "TIMED",
+      "status": "FINISHED",
       "stage": "GROUP_STAGE",
       "group": "GROUP_G",
       "utcDate": "2026-06-27T03:00:00Z",
@@ -1840,11 +1840,11 @@
         "crest": "https://crests.football-data.org/iran.svg"
       },
       "score": {
-        "winner": null,
+        "winner": "DRAW",
         "duration": "REGULAR",
         "fullTime": {
-          "home": null,
-          "away": null
+          "home": 1,
+          "away": 1
         },
         "penalties": null
       }
@@ -2024,16 +2024,16 @@
       "group": null,
       "utcDate": "2026-06-28T19:00:00Z",
       "homeTeam": {
-        "id": null,
-        "name": null,
-        "tla": null,
-        "crest": null
+        "id": 774,
+        "name": "South Africa",
+        "tla": "RSA",
+        "crest": "https://crests.football-data.org/9396.svg"
       },
       "awayTeam": {
-        "id": null,
-        "name": null,
-        "tla": null,
-        "crest": null
+        "id": 828,
+        "name": "Canada",
+        "tla": "CAN",
+        "crest": "https://crests.football-data.org/canada.svg"
       },
       "score": {
         "winner": null,
@@ -2052,16 +2052,16 @@
       "group": null,
       "utcDate": "2026-06-29T17:00:00Z",
       "homeTeam": {
-        "id": null,
-        "name": null,
-        "tla": null,
-        "crest": null
+        "id": 764,
+        "name": "Brazil",
+        "tla": "BRA",
+        "crest": "https://crests.football-data.org/764.svg"
       },
       "awayTeam": {
-        "id": null,
-        "name": null,
-        "tla": null,
-        "crest": null
+        "id": 766,
+        "name": "Japan",
+        "tla": "JPN",
+        "crest": "https://crests.football-data.org/766.svg"
       },
       "score": {
         "winner": null,
@@ -2080,10 +2080,10 @@
       "group": null,
       "utcDate": "2026-06-29T20:30:00Z",
       "homeTeam": {
-        "id": null,
-        "name": null,
-        "tla": null,
-        "crest": null
+        "id": 759,
+        "name": "Germany",
+        "tla": "GER",
+        "crest": "https://crests.football-data.org/759.svg"
       },
       "awayTeam": {
         "id": null,
@@ -2108,16 +2108,16 @@
       "group": null,
       "utcDate": "2026-06-30T01:00:00Z",
       "homeTeam": {
-        "id": null,
-        "name": null,
-        "tla": null,
-        "crest": null
+        "id": 8601,
+        "name": "Netherlands",
+        "tla": "NED",
+        "crest": "https://crests.football-data.org/8601.svg"
       },
       "awayTeam": {
-        "id": null,
-        "name": null,
-        "tla": null,
-        "crest": null
+        "id": 815,
+        "name": "Morocco",
+        "tla": "MAR",
+        "crest": "https://crests.football-data.org/morocco.svg"
       },
       "score": {
         "winner": null,
@@ -2136,10 +2136,10 @@
       "group": null,
       "utcDate": "2026-06-30T17:00:00Z",
       "homeTeam": {
-        "id": null,
-        "name": null,
-        "tla": null,
-        "crest": null
+        "id": 1935,
+        "name": "Ivory Coast",
+        "tla": "CIV",
+        "crest": "https://crests.football-data.org/787.svg"
       },
       "awayTeam": {
         "id": null,
@@ -2192,10 +2192,10 @@
       "group": null,
       "utcDate": "2026-07-01T01:00:00Z",
       "homeTeam": {
-        "id": null,
-        "name": null,
-        "tla": null,
-        "crest": null
+        "id": 769,
+        "name": "Mexico",
+        "tla": "MEX",
+        "crest": "https://crests.football-data.org/769.svg"
       },
       "awayTeam": {
         "id": null,
@@ -2276,16 +2276,16 @@
       "group": null,
       "utcDate": "2026-07-02T00:00:00Z",
       "homeTeam": {
-        "id": null,
-        "name": null,
-        "tla": null,
-        "crest": null
+        "id": 771,
+        "name": "United States",
+        "tla": "USA",
+        "crest": "https://crests.football-data.org/usa.svg"
       },
       "awayTeam": {
-        "id": null,
-        "name": null,
-        "tla": null,
-        "crest": null
+        "id": 1060,
+        "name": "Bosnia-Herzegovina",
+        "tla": "BIH",
+        "crest": "https://crests.football-data.org/bosnia.svg"
       },
       "score": {
         "winner": null,
@@ -2360,10 +2360,10 @@
       "group": null,
       "utcDate": "2026-07-03T03:00:00Z",
       "homeTeam": {
-        "id": null,
-        "name": null,
-        "tla": null,
-        "crest": null
+        "id": 788,
+        "name": "Switzerland",
+        "tla": "SUI",
+        "crest": "https://crests.football-data.org/788.svg"
       },
       "awayTeam": {
         "id": null,
@@ -2388,10 +2388,10 @@
       "group": null,
       "utcDate": "2026-07-03T18:00:00Z",
       "homeTeam": {
-        "id": null,
-        "name": null,
-        "tla": null,
-        "crest": null
+        "id": 779,
+        "name": "Australia",
+        "tla": "AUS",
+        "crest": "https://crests.football-data.org/779.svg"
       },
       "awayTeam": {
         "id": null,
@@ -2416,10 +2416,10 @@
       "group": null,
       "utcDate": "2026-07-03T22:00:00Z",
       "homeTeam": {
-        "id": null,
-        "name": null,
-        "tla": null,
-        "crest": null
+        "id": 762,
+        "name": "Argentina",
+        "tla": "ARG",
+        "crest": "https://crests.football-data.org/762.png"
       },
       "awayTeam": {
         "id": null,
