@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-06-28T20:51:22.699Z",
+  "fetchedAt": "2026-06-28T22:53:55.270Z",
   "matches": [
     {
       "id": 537327,
@@ -2019,7 +2019,7 @@
     },
     {
       "id": 537417,
-      "status": "PAUSED",
+      "status": "FINISHED",
       "stage": "LAST_32",
       "group": null,
       "utcDate": "2026-06-28T19:00:00Z",
@@ -2036,11 +2036,11 @@
         "crest": "https://crests.football-data.org/canada.svg"
       },
       "score": {
-        "winner": "DRAW",
+        "winner": "AWAY_TEAM",
         "duration": "REGULAR",
         "fullTime": {
           "home": 0,
-          "away": 0
+          "away": 1
         },
         "penalties": null
       }
