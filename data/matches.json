@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-06-28T22:53:55.270Z",
+  "fetchedAt": "2026-06-29T08:49:37.571Z",
   "matches": [
     {
       "id": 537327,
@@ -2472,10 +2472,10 @@
       "group": null,
       "utcDate": "2026-07-04T17:00:00Z",
       "homeTeam": {
-        "id": null,
-        "name": null,
-        "tla": null,
-        "crest": null
+        "id": 828,
+        "name": "Canada",
+        "tla": "CAN",
+        "crest": "https://crests.football-data.org/canada.svg"
       },
       "awayTeam": {
         "id": null,
