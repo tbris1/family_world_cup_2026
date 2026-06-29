@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-06-29T21:16:08.153Z",
+  "fetchedAt": "2026-06-29T22:45:25.799Z",
   "matches": [
     {
       "id": 537327,
@@ -2093,10 +2093,10 @@
       },
       "score": {
         "winner": "DRAW",
-        "duration": "REGULAR",
+        "duration": "EXTRA_TIME",
         "fullTime": {
-          "home": 0,
-          "away": 0
+          "home": 1,
+          "away": 1
         },
         "penalties": null
       }
