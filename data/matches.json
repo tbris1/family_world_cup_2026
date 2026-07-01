@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-07-01T19:28:56.613Z",
+  "fetchedAt": "2026-07-01T21:17:03.078Z",
   "matches": [
     {
       "id": 537327,
@@ -2249,7 +2249,7 @@
     },
     {
       "id": 537422,
-      "status": "TIMED",
+      "status": "IN_PLAY",
       "stage": "LAST_32",
       "group": null,
       "utcDate": "2026-07-01T20:00:00Z",
@@ -2266,11 +2266,11 @@
         "crest": "https://crests.football-data.org/senegal.svg"
       },
       "score": {
-        "winner": null,
+        "winner": "AWAY_TEAM",
         "duration": "REGULAR",
         "fullTime": {
-          "home": null,
-          "away": null
+          "home": 0,
+          "away": 1
         },
         "penalties": null
       }
