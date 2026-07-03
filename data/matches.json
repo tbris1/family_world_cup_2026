@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-07-03T20:51:42.110Z",
+  "fetchedAt": "2026-07-03T22:54:24.792Z",
   "matches": [
     {
       "id": 537327,
@@ -2389,7 +2389,7 @@
     },
     {
       "id": 537428,
-      "status": "IN_PLAY",
+      "status": "FINISHED",
       "stage": "LAST_32",
       "group": null,
       "utcDate": "2026-07-03T18:00:00Z",
@@ -2409,18 +2409,18 @@
         "winner": null,
         "duration": "PENALTY_SHOOTOUT",
         "fullTime": {
-          "home": 2,
-          "away": 2
+          "home": 3,
+          "away": 5
         },
         "penalties": {
-          "home": 1,
-          "away": 1
+          "home": 4,
+          "away": 4
         }
       }
     },
     {
       "id": 537427,
-      "status": "TIMED",
+      "status": "IN_PLAY",
       "stage": "LAST_32",
       "group": null,
       "utcDate": "2026-07-03T22:00:00Z",
@@ -2437,11 +2437,11 @@
         "crest": "https://crests.football-data.org/cape_verde.svg"
       },
       "score": {
-        "winner": null,
+        "winner": "HOME_TEAM",
         "duration": "REGULAR",
         "fullTime": {
-          "home": null,
-          "away": null
+          "home": 1,
+          "away": 0
         },
         "penalties": null
       }
