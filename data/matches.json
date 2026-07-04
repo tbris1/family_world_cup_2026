@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-07-04T18:55:45.934Z",
+  "fetchedAt": "2026-07-04T20:42:21.310Z",
   "matches": [
     {
       "id": 537327,
@@ -2476,7 +2476,7 @@
     },
     {
       "id": 537376,
-      "status": "IN_PLAY",
+      "status": "FINISHED",
       "stage": "LAST_16",
       "group": null,
       "utcDate": "2026-07-04T17:00:00Z",
@@ -2497,7 +2497,7 @@
         "duration": "REGULAR",
         "fullTime": {
           "home": 0,
-          "away": 2
+          "away": 3
         },
         "penalties": null
       }
