@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-07-06T02:06:30.037Z",
+  "fetchedAt": "2026-07-06T08:09:41.096Z",
   "matches": [
     {
       "id": 537327,
@@ -2560,7 +2560,7 @@
     },
     {
       "id": 537378,
-      "status": "PAUSED",
+      "status": "FINISHED",
       "stage": "LAST_16",
       "group": null,
       "utcDate": "2026-07-06T01:00:00Z",
@@ -2580,8 +2580,8 @@
         "winner": "AWAY_TEAM",
         "duration": "REGULAR",
         "fullTime": {
-          "home": 1,
-          "away": 2
+          "home": 2,
+          "away": 3
         },
         "penalties": null
       }
@@ -2761,16 +2761,16 @@
       "group": null,
       "utcDate": "2026-07-11T21:00:00Z",
       "homeTeam": {
-        "id": null,
-        "name": null,
-        "tla": null,
-        "crest": null
+        "id": 8872,
+        "name": "Norway",
+        "tla": "NOR",
+        "crest": "https://crests.football-data.org/813.svg"
       },
       "awayTeam": {
-        "id": null,
-        "name": null,
-        "tla": null,
-        "crest": null
+        "id": 770,
+        "name": "England",
+        "tla": "ENG",
+        "crest": "https://crests.football-data.org/770.svg"
       },
       "score": {
         "winner": null,
