@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-07-06T08:09:41.096Z",
+  "fetchedAt": "2026-07-06T19:40:59.751Z",
   "matches": [
     {
       "id": 537327,
@@ -2588,7 +2588,7 @@
     },
     {
       "id": 537379,
-      "status": "TIMED",
+      "status": "LIVE",
       "stage": "LAST_16",
       "group": null,
       "utcDate": "2026-07-06T19:00:00Z",
@@ -2605,11 +2605,11 @@
         "crest": "https://crests.football-data.org/760.svg"
       },
       "score": {
-        "winner": null,
+        "winner": "DRAW",
         "duration": "REGULAR",
         "fullTime": {
-          "home": null,
-          "away": null
+          "home": 0,
+          "away": 0
         },
         "penalties": null
       }
