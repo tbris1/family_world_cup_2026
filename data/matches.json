@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-07-07T02:01:50.482Z",
+  "fetchedAt": "2026-07-07T07:28:00.328Z",
   "matches": [
     {
       "id": 537327,
@@ -2616,7 +2616,7 @@
     },
     {
       "id": 537380,
-      "status": "IN_PLAY",
+      "status": "FINISHED",
       "stage": "LAST_16",
       "group": null,
       "utcDate": "2026-07-07T00:00:00Z",
@@ -2733,16 +2733,16 @@
       "group": null,
       "utcDate": "2026-07-10T19:00:00Z",
       "homeTeam": {
-        "id": null,
-        "name": null,
-        "tla": null,
-        "crest": null
+        "id": 760,
+        "name": "Spain",
+        "tla": "ESP",
+        "crest": "https://crests.football-data.org/760.svg"
       },
       "awayTeam": {
-        "id": null,
-        "name": null,
-        "tla": null,
-        "crest": null
+        "id": 805,
+        "name": "Belgium",
+        "tla": "BEL",
+        "crest": "https://crests.football-data.org/805.svg"
       },
       "score": {
         "winner": null,
