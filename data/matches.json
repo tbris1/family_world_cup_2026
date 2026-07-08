@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-07-07T22:50:40.579Z",
+  "fetchedAt": "2026-07-08T01:42:57.347Z",
   "matches": [
     {
       "id": 537327,
@@ -2692,12 +2692,12 @@
         "winner": null,
         "duration": "PENALTY_SHOOTOUT",
         "fullTime": {
-          "home": 1,
-          "away": 1
+          "home": 4,
+          "away": 3
         },
         "penalties": {
-          "home": 1,
-          "away": 1
+          "home": 3,
+          "away": 3
         }
       }
     },
