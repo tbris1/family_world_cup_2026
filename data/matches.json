@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-07-08T01:42:57.347Z",
+  "fetchedAt": "2026-07-08T08:07:03.768Z",
   "matches": [
     {
       "id": 537327,
@@ -2689,14 +2689,14 @@
         "crest": "https://crests.football-data.org/818.svg"
       },
       "score": {
-        "winner": null,
+        "winner": "HOME_TEAM",
         "duration": "PENALTY_SHOOTOUT",
         "fullTime": {
           "home": 4,
           "away": 3
         },
         "penalties": {
-          "home": 3,
+          "home": 4,
           "away": 3
         }
       }
@@ -2792,16 +2792,16 @@
       "group": null,
       "utcDate": "2026-07-12T01:00:00Z",
       "homeTeam": {
-        "id": null,
-        "name": null,
-        "tla": null,
-        "crest": null
+        "id": 762,
+        "name": "Argentina",
+        "tla": "ARG",
+        "crest": "https://crests.football-data.org/762.png"
       },
       "awayTeam": {
-        "id": null,
-        "name": null,
-        "tla": null,
-        "crest": null
+        "id": 788,
+        "name": "Switzerland",
+        "tla": "SUI",
+        "crest": "https://crests.football-data.org/788.svg"
       },
       "score": {
         "winner": null,
