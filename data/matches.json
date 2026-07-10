@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-07-09T23:01:51.112Z",
+  "fetchedAt": "2026-07-10T09:17:10.980Z",
   "matches": [
     {
       "id": 537327,
@@ -2820,10 +2820,10 @@
       "group": null,
       "utcDate": "2026-07-14T19:00:00Z",
       "homeTeam": {
-        "id": null,
-        "name": null,
-        "tla": null,
-        "crest": null
+        "id": 773,
+        "name": "France",
+        "tla": "FRA",
+        "crest": "https://crests.football-data.org/773.svg"
       },
       "awayTeam": {
         "id": null,
