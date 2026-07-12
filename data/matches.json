@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-07-12T01:43:43.792Z",
+  "fetchedAt": "2026-07-12T05:16:14.882Z",
   "matches": [
     {
       "id": 537327,
@@ -2787,7 +2787,7 @@
     },
     {
       "id": 537386,
-      "status": "IN_PLAY",
+      "status": "FINISHED",
       "stage": "QUARTER_FINALS",
       "group": null,
       "utcDate": "2026-07-12T01:00:00Z",
@@ -2805,10 +2805,10 @@
       },
       "score": {
         "winner": "HOME_TEAM",
-        "duration": "REGULAR",
+        "duration": "EXTRA_TIME",
         "fullTime": {
-          "home": 1,
-          "away": 0
+          "home": 3,
+          "away": 1
         },
         "penalties": null
       }
