@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-07-12T05:16:14.882Z",
+  "fetchedAt": "2026-07-12T07:58:22.501Z",
   "matches": [
     {
       "id": 537327,
@@ -2560,7 +2560,7 @@
     },
     {
       "id": 537378,
-      "status": "2026-07-06 01:00:00Z",
+      "status": "FINISHED",
       "stage": "LAST_16",
       "group": null,
       "utcDate": "2026-07-06T01:00:00Z",
@@ -2848,16 +2848,16 @@
       "group": null,
       "utcDate": "2026-07-15T19:00:00Z",
       "homeTeam": {
-        "id": null,
-        "name": null,
-        "tla": null,
-        "crest": null
+        "id": 770,
+        "name": "England",
+        "tla": "ENG",
+        "crest": "https://crests.football-data.org/770.svg"
       },
       "awayTeam": {
-        "id": null,
-        "name": null,
-        "tla": null,
-        "crest": null
+        "id": 762,
+        "name": "Argentina",
+        "tla": "ARG",
+        "crest": "https://crests.football-data.org/762.png"
       },
       "score": {
         "winner": null,
