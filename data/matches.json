@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-07-14T20:48:57.778Z",
+  "fetchedAt": "2026-07-14T22:45:19.046Z",
   "matches": [
     {
       "id": 537327,
@@ -2815,7 +2815,7 @@
     },
     {
       "id": 537387,
-      "status": "IN_PLAY",
+      "status": "FINISHED",
       "stage": "SEMI_FINALS",
       "group": null,
       "utcDate": "2026-07-14T19:00:00Z",
