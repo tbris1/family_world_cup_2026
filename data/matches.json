@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-07-16T07:54:06.388Z",
+  "fetchedAt": "2026-07-18T22:37:41.026Z",
   "matches": [
     {
       "id": 537327,
@@ -2871,7 +2871,7 @@
     },
     {
       "id": 537389,
-      "status": "TIMED",
+      "status": "IN_PLAY",
       "stage": "THIRD_PLACE",
       "group": null,
       "utcDate": "2026-07-18T21:00:00Z",
@@ -2888,11 +2888,11 @@
         "crest": "https://crests.football-data.org/770.svg"
       },
       "score": {
-        "winner": null,
+        "winner": "AWAY_TEAM",
         "duration": "REGULAR",
         "fullTime": {
-          "home": null,
-          "away": null
+          "home": 3,
+          "away": 4
         },
         "penalties": null
       }
