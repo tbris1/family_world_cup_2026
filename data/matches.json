@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-07-18T22:37:41.026Z",
+  "fetchedAt": "2026-07-19T01:41:35.210Z",
   "matches": [
     {
       "id": 537327,
@@ -2871,7 +2871,7 @@
     },
     {
       "id": 537389,
-      "status": "IN_PLAY",
+      "status": "FINISHED",
       "stage": "THIRD_PLACE",
       "group": null,
       "utcDate": "2026-07-18T21:00:00Z",
@@ -2891,8 +2891,8 @@
         "winner": "AWAY_TEAM",
         "duration": "REGULAR",
         "fullTime": {
-          "home": 3,
-          "away": 4
+          "home": 4,
+          "away": 6
         },
         "penalties": null
       }
